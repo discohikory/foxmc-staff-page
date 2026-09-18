@@ -621,13 +621,13 @@ $('btnCheckDc').onclick=async()=>{const id=$('fDcId').value.trim();if(!id)return
  }catch(e){$('dcStatus').textContent='⚠️ Sin conexión a Lanyard: pega su foto manualmente abajo.'}
 };
 $('btnSaveSotm').onclick=()=>{if(!ADMIN)return;
- if(CLOUD){const id=$('fDcId').value.trim();if(!id)return toast('✏️ ID?');cloudCmd('s!staffmes <@'+id+'>');return}
+ if(CLOUD){const id=$('fDcId').value.trim();if(!id)return toast('✏️ ID?');cloudCmd('f!staffmes <@'+id+'>');return}
  DB.sotm={mc:$('fMc').value.trim(),dcId:$('fDcId').value.trim(),dcName:$('fDcName').value.trim(),dcAv:$('fDcAv').value.trim(),deco:$('fDeco').value,pts:+$('fPts').value||0,platform:'java'};
  if(DB.sotm.mc){DB.points[DB.sotm.mc]={mc:DB.sotm.mc,dc:DB.sotm.dcName,pts:DB.sotm.pts,platform:'java'}}
  DB.log.unshift('👑 '+new Date().toLocaleString()+' — Staff del Mes: '+(DB.sotm.mc||'?'));
  saveDB(DB);renderSotm();renderBoard();toast(LANG==='en'?'Saved ✅':'Guardado ✅')};
 function movePts(sign){if(!ADMIN)return;const n=$('pName').value.trim();const a=+$('pAmt').value||0;if(!n||!a)return toast('✏️?');
- if(CLOUD){cloudCmd('s!'+(sign>0?'dar ':'quitar ')+n+' '+a);return}
+ if(CLOUD){cloudCmd('f!'+(sign>0?'dar ':'quitar ')+n+' '+a);return}
  DB.points[n]={mc:n,dc:n,pts:((DB.points[n]&&DB.points[n].pts)||DB.points[n]||0)+sign*a,platform:'java'};
  DB.log.unshift((sign>0?'+':'−')+a+' pts → '+n+' ('+new Date().toLocaleString()+')');
  saveDB(DB);renderBoard();if(DB.sotm&&DB.sotm.mc===n){DB.sotm.pts=DB.points[n].pts;saveDB(DB);renderSotm()}$('pName').value='';
