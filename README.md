@@ -1,5 +1,7 @@
 # 🦊 FoxMC Network — Staff Page
 
+![FoxMC Staff — Logo oficial](foxmc-logo.png)
+
 Página oficial del Staff de **FoxMC Network** — Edición Black Cinematic naranja.
 
 ## 🌐 Ver online (GitHub Pages)

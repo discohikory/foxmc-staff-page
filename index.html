@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FoxMC Network — Staff Page</title>
+<link rel="icon" type="image/png" href="foxmc-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -28,7 +29,9 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(900px 
 /* NAV flotante */
 nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:100;display:flex;align-items:center;gap:8px;padding:10px 14px;background:rgba(20,10,5,.82);backdrop-filter:blur(18px);border:1px solid var(--border);border-radius:100px;box-shadow:0 10px 40px rgba(0,0,0,.5);max-width:96vw;flex-wrap:wrap;justify-content:center}
 .nav-logo{display:flex;align-items:center;gap:10px;padding-right:8px}
-.foxmark{width:38px;height:38px;border-radius:12px;background:var(--fire);display:flex;align-items:center;justify-content:center;font-size:1.3rem;box-shadow:var(--glow)}
+.foxmark-img{width:40px;height:40px;border-radius:12px;object-fit:cover;box-shadow:var(--glow);border:1px solid var(--border)}
+.fox-logo{position:relative;z-index:2;width:min(430px,86vw);border-radius:26px;box-shadow:0 20px 80px rgba(0,0,0,.6),var(--glow);border:1px solid #5a3415;animation:foxbob 5s ease-in-out infinite}
+.foot-logo-img{width:120px;border-radius:20px;box-shadow:var(--glow);border:1px solid #5a3415;margin-bottom:14px}
 .nav-logo b{font-family:'Unbounded';font-size:.82rem;letter-spacing:.06em}
 .nav-logo small{display:block;font-family:'JetBrains Mono';font-size:.58rem;letter-spacing:.3em;color:var(--muted)}
 .nav-links{display:flex;gap:2px;align-items:center;flex-wrap:wrap;justify-content:center}
@@ -231,7 +234,7 @@ footer p{color:#8a6742;font-size:.8rem;margin-top:12px;line-height:1.8}
 <div class="cursor" id="cursor"></div><div class="cursor-dot" id="cursorDot"></div>
 
 <nav>
-  <div class="nav-logo"><div class="foxmark">🦊</div><div><b>FOXMC NETWORK</b><small>STAFF PAGE</small></div></div>
+  <div class="nav-logo"><img class="foxmark-img" src="foxmc-logo.png" alt="FoxMC"><div><b>FOXMC NETWORK</b><small>STAFF PAGE</small></div></div>
   <div class="nav-links">
     <a href="#inicio" class="active" data-es="Inicio" data-en="Home">Inicio</a>
     <a href="#guias" data-es="Guías" data-en="Guides">Guías</a>
@@ -262,19 +265,11 @@ footer p{color:#8a6742;font-size:.8rem;margin-top:12px;line-height:1.8}
       <div class="stat"><h3>24/7</h3><p data-es="Soporte" data-en="Support">Soporte</p></div>
     </div>
   </div>
-  <div class="fox-side">
-    <div class="fox-ring">
-      <svg class="fox-svg" viewBox="0 0 200 170" fill="none">
-        <path d="M100 165 L20 110 L12 25 L70 55 L100 40 L130 55 L188 25 L180 110 Z" fill="#1c0f05" stroke="#ff6a00" stroke-width="5" stroke-linejoin="round"/>
-        <path d="M12 25 L55 48 L40 95 Z" fill="#ff3d00"/>
-        <path d="M188 25 L145 48 L160 95 Z" fill="#ff3d00"/>
-        <ellipse cx="72" cy="100" rx="13" ry="15" fill="#ffb300"/>
-        <ellipse cx="128" cy="100" rx="13" ry="15" fill="#ffb300"/>
-        <circle cx="74" cy="102" r="5" fill="#1c0f05"/><circle cx="126" cy="102" r="5" fill="#1c0f05"/>
-        <path d="M92 130 L108 130 L100 140 Z" fill="#fff3e6"/>
-      </svg>
-      <div class="chip-float chip1">⭐ <span data-es="Staff del Mes" data-en="Staff of the Month">Staff del Mes</span></div>
-      <div class="chip-float chip2">🔥 <span data-es="Siempre activo" data-en="Always active">Siempre activo</span></div>
+  <div class="fox-side" style="flex-direction:column;align-items:center">
+    <img class="fox-logo" src="foxmc-logo.png" alt="FoxMC Staff — Logo oficial">
+    <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;justify-content:center;position:relative;z-index:3">
+      <div class="chip-float" style="position:static">⭐ <span data-es="Staff del Mes" data-en="Staff of the Month">Staff del Mes</span></div>
+      <div class="chip-float" style="position:static;animation-delay:-2.5s">🔥 <span data-es="Siempre activo" data-en="Always active">Siempre activo</span></div>
     </div>
   </div>
 </header>
@@ -441,6 +436,7 @@ footer p{color:#8a6742;font-size:.8rem;margin-top:12px;line-height:1.8}
 </section>
 
 <footer>
+  <img class="foot-logo-img" src="foxmc-logo.png" alt="FoxMC Staff">
   <div class="foot-logo">FOXMC</div>
   <p>FOXMC NETWORK — STAFF PAGE • Edición Ember 🦊<br>© 2026 FoxMC. Todos los derechos reservados.<br>© Derechos de autor: <b style="color:#ffb300">Discohikorybrs - Daniel Esteban Vera Fernandez</b></p>
   <div class="foot-btns">
